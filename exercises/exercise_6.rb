@@ -9,3 +9,14 @@ puts "Exercise 6"
 puts "----------"
 
 # Your code goes here ...
+
+class Store < ActiveRecord
+  has_many :employees
+end
+
+class Employee < ActiveRecord
+  belongs_to :store
+end
+
+
+@store1.employees.create(first_name: "Goku", last_name: "Dragonball", hourly_rate: 30)
