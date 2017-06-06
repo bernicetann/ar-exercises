@@ -7,3 +7,24 @@ puts "Exercise 4"
 puts "----------"
 
 # Your code goes here ...
+burnaby = Store.create name: 'Surrey',
+                       annual_revenue: '224000',
+                       mens_apparel: 'false',
+                       womens_apparel: 'true'
+
+richmond = Store.create name: 'Whistler',
+                        annual_revenue: '1900000',
+                        mens_apparel: 'true',
+                        womens_apparel: 'false'
+
+gastown = Store.create name: 'Yaletown',
+                       annual_revenue: '430000',
+                       mens_apparel: 'true',
+                       womens_apparel: 'true'
+
+@mens_stores = Store.where mens_apparel: true, womens_apparel: false
+p @mens_stores.to_sql
+
+@mens_stores.each do |t|
+  puts t.name, t.annual_revenue
+end
