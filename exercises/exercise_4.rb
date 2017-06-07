@@ -22,15 +22,15 @@ gastown = Store.create name: 'Yaletown',
                        mens_apparel: 'true',
                        womens_apparel: 'true'
 
-# @mens_stores = Store.where mens_apparel: true
-# p @mens_stores.to_sql
+@mens_stores = Store.where mens_apparel: true
+p @mens_stores.to_sql
 
 @womens_stores = Store.where (["womens_apparel = ? and annual_revenue < ?", true, 1000000])
 p @womens_stores.to_sql
 
-# @mens_stores.each do |t|
-#   puts t.name, t.annual_revenue
-# end
+@mens_stores.each do |t|
+  puts t.name, t.annual_revenue
+end
 
 @womens_stores.each do |t|
   puts t.name, t.annual_revenue
