@@ -10,3 +10,9 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+
+
+zara = Store.create name: 'Zara'
+
+
+

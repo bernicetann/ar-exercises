@@ -6,9 +6,13 @@ puts "----------"
 # Your code goes below here ...
 class Store < ActiveRecord::Base
 
+    has_many :employees
+    validates :name, length: { minimum: 3 }
+    validates :annual_revenue, numericality: { only_integer: true }
+
 end
 
-burnaby = Store.create name: 'Burnaby',
+burnaby = Store.create name: 'Bu',
                        annual_revenue: '300000',
                        mens_apparel: 'true',
                        womens_apparel: 'true'
@@ -23,6 +27,8 @@ gastown = Store.create name: 'Gastown',
                        mens_apparel: 'true',
                        womens_apparel: 'false'
 
+burnaby.valid?
+burnaby.errors[:name] => ["TOO SHORT"]
 puts Store.count
 
 p burnaby

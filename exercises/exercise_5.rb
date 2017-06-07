@@ -12,6 +12,9 @@ puts "----------"
 @total_revenue = Store.sum :annual_revenue
 p @total_revenue
 
+@total_avg = Store.average :annual_revenue
+p @total_avg
+
 rich_stores = Store.where (["annual_revenue > ?", 1000000])
 p rich_stores.count
 
